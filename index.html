@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>Document</title>
+		<!-- Compiled and minified CSS -->
+		<link
+			rel="stylesheet"
+			href="//cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+		/>
+		<link
+			rel="stylesheet"
+			href="//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"
+		/>
+		<link href="lib/css/emoji.css" rel="stylesheet" />
+		<style>
+			.emoji-wysiwyg-editor {
+				border: navajowhite;
+				border-bottom: 1px solid #9e9e9e;
+				height: auto !important;
+			}
+
+			.emoji-picker-icon {
+				right: 15px;
+			}
+			.emoji-wysiwyg-editor:focus {
+				outline: none;
+				border-color:  #26a69a;
+				box-shadow: 0 1px 0 0 #26a69a;
+			}
+		</style>
+	</head>
+	<body>
+
+		<div class="container">
+			<div class="row">
+				<form class="col s6 offset-s3">
+					<div class="row">
+						<div class="input-field">
+							<input
+								placeholder="Placeholder..."
+								id="first_name"
+								type="text"
+								class="validate"
+								data-emojiable="true"
+							/>
+							<!-- <label for="first_name">First Name</label> -->
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+
+		<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+		<script src="//cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+		<script src="lib/js/config.js"></script>
+		<script src="lib/js/util.js"></script>
+		<script src="lib/js/jquery.emojiarea.js"></script>
+		<script src="lib/js/emoji-picker.js"></script>
+		<script>
+			$(function() {
+				window.emojiPicker = new EmojiPicker({
+					emojiable_selector: "[data-emojiable=true]",
+					assetsPath: "../lib/img/",
+					popupButtonClasses: "fa fa-smile-o"
+				});
+				window.emojiPicker.discover();
+			});
+		</script>
+	</body>
+</html>
